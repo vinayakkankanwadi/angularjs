@@ -1,9 +1,35 @@
-<html ng-app='siteApp'>
+<html>
     <head>
         <title>Site App</title>
 		<script type="text/javascript" src="angular.min.js"></script>
 		<script type="text/javascript" src="site.js"></script>
     </head>
-    <body ng-controller="siteController">
-    </body>
+    <body>
+	<div ng-app='siteApp' ng-controller='siteController'>
+    <form class="site">
+        <label>Name</label>
+        <input type="text" name="name" ng-model="newsite.name" />
+        <br/>
+        <input type="hidden" ng-model="newsite.id" />
+        <input type="button" value="Save" ng-click="saveSite()" class="btn btn-primary" />
+    </form>
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="site in sites">
+                <td>{{ site.id }}</td>
+                <td>{{ site.name }}</td>
+                <td> <a href="javascript:void(0)" ng-click="edit(site.id)">edit</a> | <a href="javascript:void(0)" ng-click="delete(site.id)">delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+	</div>
+	</body>
 </html>
