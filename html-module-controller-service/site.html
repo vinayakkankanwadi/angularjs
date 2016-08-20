@@ -6,13 +6,28 @@
     </head>
     <body>
 	<div ng-app='siteApp' ng-controller='siteController'>
+	<label>Site</label>   
+	<select ng-model="selectedSite" ng-change="update(selectedSite)">
+	<option ng-repeat="site in sites" value="{{site.id}}">{{site.name}}</option>
+	</select>
+	
     <form class="site">
-        <label>Name</label>
-        <input type="text" name="name" ng-model="newsite.name" />
+        <label>Id</label>
+        <input type="text" name="id" ng-model="currentsite.id" />
         <br/>
-        <input type="hidden" ng-model="newsite.id" />
-        <input type="button" value="Save" ng-click="saveSite()" class="btn btn-primary" />
+        <label>Name</label>
+        <input type="text" name="name" ng-model="currentsite.name" />
+        <br/>
+        <label>Key</label>
+        <input type="text" name="key" ng-model="currentkey.key" />
+        <br/>		
+        <input type="button" value="Generate" ng-click="generate(selectedSite)" class="btn btn-primary" />
+		<input type="button" value="Delete" ng-click="delete(selectedSite)" class="btn btn-primary" />
     </form>
+
+	<h1>You selected: {{selectedSite}}</h1>
+
+
     <table class="table table-striped table-bordered">
         <thead>
             <tr>
@@ -30,6 +45,13 @@
             </tr>
         </tbody>
     </table>
+    <form class="site">
+        <label>Name</label>
+        <input type="text" name="name" ng-model="newsite.name" />
+        <br/>
+        <input type="hidden" ng-model="newsite.id" />
+        <input type="button" value="Save" ng-click="saveSite()" class="btn btn-primary" />
+    </form>
 	</div>
 	</body>
 </html>
