@@ -99,11 +99,3 @@ module.controller('siteController',function($scope, siteService){
 		$scope.currentkey = angular.copy(siteService.getKey(id));
     }
 });
-
-module.config(function($mdThemingProvider) {
-    // Configure a dark theme with primary foreground yellow
-    $mdThemingProvider.theme('docs-dark', 'default')
-      .primaryPalette('blue')
-	  .backgroundPalette('grey')
-      .dark();
-});

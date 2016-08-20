@@ -21,16 +21,19 @@
 		
     </head>
     <body>
-	<div ng-app='siteApp' ng-controller='siteController' ng-cloak>
+	<div>
 	<md-content>
 		<section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
 			<md-toolbar class="md-primary">
-				<div class="md-toolbar-tools">
-					<h2 class="md-flex">Site Key Management</h2>
+				<div class="md-toolbar-tools md-bgcolor-red">
+					<h1 class="md-flex">Site Key Management</h1>
 				</div>
 			</md-toolbar>
 		</section>
-		<md-content md-theme="docs-dark" layout-gt-sm="row" layout-padding>
+	</md-content>	
+	</div>
+	<div ng-app='siteApp' ng-controller='siteController' ng-cloak>
+		<md-content layout-padding>
 		<div>
 			<md-input-container>
 			<label>Pick a site</label>
@@ -42,43 +45,48 @@
 			</md-input-container>
 		</div>
 		</md-content>
-		<md-content layout-padding>
 		<div>
-		<form name="userForm">
-        <div layout-gt-xs="row">
-          <md-input-container class="md-block" flex-gt-xs>
-            <label>Id</label>
-            <input ng-model="currentsite.id" disabled>
-          </md-input-container>
-        </div>
-        <div layout-gt-sm="row">
-          <md-input-container class="md-block" flex-gt-sm>
-            <label>Name</label>
-            <input ng-model="currentsite.name" disabled>
-          </md-input-container>
-        </div>
-        <div layout-gt-sm="row">
-          <md-input-container class="md-block" flex-gt-sm>
-            <label>Key</label>
-            <input ng-model="currentkey.key" disabled>
-          </md-input-container>
-          </div>
-		<div layout-gt-sm="row">
-        	<md-button ng-click="generate(selectedSite)" class="md-raised md-cornered md-green" ng-disabled="false">Generate</md-button>
-			<md-button ng-click="delete(selectedSite)"   class="md-raised md-cornered md-red" ng-disabled="true">Delete</md-button>
-		</div>  
-        </form>
-    </div>
-	</md-content>
-	<md-content>
-		<section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
-			<md-toolbar class="md-primary">
-			<div class="md-toolbar-tools">
-				<h2 class="md-flex">Copyright @</h2>
+		<md-content layout-padding>
+			<form name="userForm">
+			<div layout-gt-xs="row">
+				<md-input-container class="md-block" flex-gt-xs>
+				<label>Id</label>
+				<input ng-model="currentsite.id" disabled>
+				</md-input-container>
 			</div>
-			</md-toolbar>
-		</section>		
-	</md-content>
-	</div>
+        
+			<div layout-gt-sm="row">
+				<md-input-container class="md-block" flex-gt-sm>
+				<label>Name</label>
+				<input ng-model="currentsite.name" disabled>
+				</md-input-container>
+			</div>
+        
+			<div layout-gt-sm="row">
+				<md-input-container class="md-block" flex-gt-sm>
+				<label>Key</label>
+				<input ng-model="currentkey.key" disabled>
+				</md-input-container>
+			</div>
+		
+			<div layout-gt-sm="row">
+				<md-button ng-click="generate(selectedSite)" class="md-raised md-cornered md-green" ng-disabled="false">Generate</md-button>
+				<md-button ng-click="delete(selectedSite)"   class="md-raised md-cornered md-red" ng-disabled="false">Delete</md-button>
+			</div>  
+			</form>
+		</md-content>  
+		</div>
+
+		<div>
+		<md-content>
+			<section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+				<md-toolbar class="md-primary">
+					<div class="md-toolbar-tools md-bgcolor-red">
+						<h1 class="md-flex">Copyright</h1>
+					</div>
+				</md-toolbar>
+			</section>
+		</md-content>	
+		</div>	
 	</body>
 </html>
