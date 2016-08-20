@@ -1,28 +1,82 @@
 <html>
     <head>
         <title>Site App</title>
-		<script type="text/javascript" src="angular.min.js"></script>
+		
+		<!-- Angular Material style sheet -->
+		<link rel="stylesheet" href="angular-material.min.css">
+		
+		  <!-- Angular Material requires Angular.js Libraries -->
+		<script src="angular.min.js"></script>
+		<script src="angular-animate.min.js"></script>
+		<script src="angular-aria.min.js"></script>
+		<script src="angular-messages.min.js"></script>
+
+		<!-- Angular Material Library -->
+		<script src="angular-material.min.js"></script>
+  	
+		<!-- Site Module  -->
 		<script type="text/javascript" src="site.js"></script>
+		
     </head>
     <body>
-	<div ng-app='siteApp' ng-controller='siteController'>
-	<label>Site</label>   
-		<select ng-model="selectedSite" ng-change="update(selectedSite)">
-		<option ng-repeat="site in sites" value="{{site.id}}">{{site.name}}</option>
-		</select>
-    <form class="site">
-        <label>Id</label>
-        <input type="text" name="id" ng-model="currentsite.id" />
-        <br/>
-        <label>Name</label>
-        <input type="text" name="name" ng-model="currentsite.name" />
-        <br/>
-        <label>Key</label>
-        <input type="text" name="key" ng-model="currentkey.key" />
-        <br/>		
-        <input type="button" value="Generate" ng-click="generate(selectedSite)" class="btn btn-primary" />
-		<input type="button" value="Delete" ng-click="delete(selectedSite)" class="btn btn-primary" />
-    </form>
+	<div ng-app='siteApp' ng-controller='siteController' ng-cloak>
+	<md-content>
+		<section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+			<md-toolbar class="md-primary">
+				<div class="md-toolbar-tools">
+					<h2 class="md-flex">Site Key Management</h2>
+				</div>
+			</md-toolbar>
+		</section>
+		<md-content md-theme="docs-dark" layout-gt-sm="row" layout-padding>
+		<div>
+			<md-input-container>
+			<label>Pick a site</label>
+			<md-select ng-model="selectedSite" ng-change="update(selectedSite)">
+			<md-optgroup label="site">
+			<md-option ng-repeat="site in sites" value="{{site.id}}">{{site.name}}</md-option>
+			</md-optgroup>
+			</md-select>
+			</md-input-container>
+		</div>
+		</md-content>
+		<md-content layout-padding>
+		<div>
+		<form name="userForm">
+        <div layout-gt-xs="row">
+          <md-input-container class="md-block" flex-gt-xs>
+            <label>Id</label>
+            <input ng-model="currentsite.id" disabled>
+          </md-input-container>
+        </div>
+        <div layout-gt-sm="row">
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Name</label>
+            <input ng-model="currentsite.name" disabled>
+          </md-input-container>
+        </div>
+        <div layout-gt-sm="row">
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Key</label>
+            <input ng-model="currentkey.key" disabled>
+          </md-input-container>
+          </div>
+		<div layout-gt-sm="row">
+        	<md-button ng-click="generate(selectedSite)" class="md-raised md-primary">Generate</md-button>
+			<md-button ng-click="delete(selectedSite)" class="md-raised md-warn">Delete</md-button>
+		</div>  
+        </form>
+    </div>
+	</md-content>
+	<md-content>
+		<section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+			<md-toolbar class="md-primary">
+			<div class="md-toolbar-tools">
+				<h2 class="md-flex">Copyright @</h2>
+			</div>
+			</md-toolbar>
+		</section>		
+	</md-content>
 	</div>
 	</body>
 </html>

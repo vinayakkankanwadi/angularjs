@@ -1,4 +1,4 @@
-var module = angular.module('siteApp', []);
+var module = angular.module('siteApp', ['ngMaterial']);
 
 module.service('siteService',function() {
     console.log('Site Service created!');
@@ -39,6 +39,7 @@ module.service('siteService',function() {
             }
         }
     }
+	
 	
     //simply search keys list for given id
     //and returns the key object if found
@@ -97,4 +98,11 @@ module.controller('siteController',function($scope, siteService){
         $scope.currentsite = angular.copy(siteService.getSite(id));
 		$scope.currentkey = angular.copy(siteService.getKey(id));
     }
+});
+
+module.config(function($mdThemingProvider) {
+    // Configure a dark theme with primary foreground yellow
+    $mdThemingProvider.theme('docs-dark', 'default')
+      .primaryPalette('yellow')
+      .dark();
 });
