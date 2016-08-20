@@ -35,10 +35,10 @@
 	<div ng-app='siteApp' ng-controller='siteController' ng-cloak>
 		<md-content layout-padding>
 		<div>
-			<md-input-container>
-			<label>Pick a site</label>
-			<md-select ng-model="selectedSite" ng-change="update(selectedSite)">
-			<md-optgroup label="Pick a site">
+			<md-input-container class="width-100" >
+			<label>Site</label>
+			<md-select ng-model="selectedSite" ng-change="update(selectedSite)" placeholder="Please select a site">
+			<md-optgroup label="Site">
 			<md-option ng-repeat="site in sites" value="{{site.id}}">{{site.name}}</md-option>
 			</md-optgroup>
 			</md-select>

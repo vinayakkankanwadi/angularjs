@@ -1,4 +1,4 @@
-var module = angular.module('siteApp', ['ngMaterial']);
+var module = angular.module('siteApp', ['ngMaterial','ngAnimate']);
 
 module.service('siteService',function() {
     console.log('Site Service created!');
