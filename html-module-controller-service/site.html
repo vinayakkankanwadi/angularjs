@@ -6,16 +6,18 @@
 		<link rel="stylesheet" href="angular-material.min.css">
 		
 		  <!-- Angular Material requires Angular.js Libraries -->
-		<script src="angular.min.js"></script>
-		<script src="angular-animate.min.js"></script>
-		<script src="angular-aria.min.js"></script>
-		<script src="angular-messages.min.js"></script>
+		<script type="text/javascript" src="angular.min.js"></script>
+		<script type="text/javascript" src="angular-animate.min.js"></script>
+		<script type="text/javascript" src="angular-aria.min.js"></script>
+		<script type="text/javascript" src="angular-messages.min.js"></script>
 
 		<!-- Angular Material Library -->
 		<script src="angular-material.min.js"></script>
   	
 		<!-- Site Module  -->
 		<script type="text/javascript" src="site.js"></script>
+		<!-- Site style sheet  -->
+		<link rel="stylesheet" href="site.css">
 		
     </head>
     <body>
@@ -33,7 +35,7 @@
 			<md-input-container>
 			<label>Pick a site</label>
 			<md-select ng-model="selectedSite" ng-change="update(selectedSite)">
-			<md-optgroup label="site">
+			<md-optgroup label="Pick a site">
 			<md-option ng-repeat="site in sites" value="{{site.id}}">{{site.name}}</md-option>
 			</md-optgroup>
 			</md-select>
@@ -62,8 +64,8 @@
           </md-input-container>
           </div>
 		<div layout-gt-sm="row">
-        	<md-button ng-click="generate(selectedSite)" class="md-raised md-primary">Generate</md-button>
-			<md-button ng-click="delete(selectedSite)" class="md-raised md-warn">Delete</md-button>
+        	<md-button ng-click="generate(selectedSite)" class="md-raised md-cornered md-green" ng-disabled="false">Generate</md-button>
+			<md-button ng-click="delete(selectedSite)"   class="md-raised md-cornered md-red" ng-disabled="true">Delete</md-button>
 		</div>  
         </form>
     </div>

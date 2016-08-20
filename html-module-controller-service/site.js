@@ -103,6 +103,7 @@ module.controller('siteController',function($scope, siteService){
 module.config(function($mdThemingProvider) {
     // Configure a dark theme with primary foreground yellow
     $mdThemingProvider.theme('docs-dark', 'default')
-      .primaryPalette('yellow')
+      .primaryPalette('blue')
+	  .backgroundPalette('grey')
       .dark();
 });
