@@ -38,12 +38,14 @@
 				<md-card md-colors="::{backgroundColor: '{{theme}}-primary-700'}">
 				<md-card-title>
 				<md-card-title-text>
-	
-				<label>Site</label>
-				<md-select ng-model="selectedSite" ng-change="update(selectedSite)" placeholder="Please select a site">
-				<md-option ng-repeat="site in sites" value="{{site.id}}">{{site.name}}</md-option>
-				</md-select>
-				
+				<div layout-gt-sm="row">
+					<md-input-container class="md-block" flex-gt-sm>
+					<label>Site</label>
+					<md-select ng-model="selectedSite" ng-change="update(selectedSite)" placeholder="Please select a site">
+					<md-option ng-repeat="site in sites" value="{{site.id}}">{{site.name}}</md-option>
+					</md-select>
+					</md-input-container>
+				</div>
 				</md-card-title-text>
 				</md-card-title>
 				</md-card>
@@ -55,8 +57,8 @@
 			<md-card-title-text>
 
 			<form name="userForm">
-			<div layout-gt-xs="row">
-				<md-input-container  flex-gt-xs>
+			<div layout-gt-sm="row">
+				<md-input-container class="md-block" flex-gt-sm>
 				<label>Id</label>
 				<input ng-model="currentsite.id" ng-readonly="true">
 				</md-input-container>
