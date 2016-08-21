@@ -3,7 +3,7 @@ var module = angular.module('siteApp', ['ngMaterial','ngAnimate']);
 module.service('siteService',function() {
     console.log('Site Service created!');
 
-	//Site array to hold list of all sites
+    //Site array to hold list of all sites
     var sites = [{
         'id': '1001-2001',
         'name': 'Orange'
