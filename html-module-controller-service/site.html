@@ -22,34 +22,44 @@
     </head>
     <body>
 	<div>
-	<md-content>
 		<section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
-			<md-toolbar class="md-primary">
-				<div class="md-toolbar-tools md-bgcolor-red">
-					<h1 class="md-flex">Site Key Management</h1>
-				</div>
-			</md-toolbar>
+		<md-card md-colors="::{backgroundColor: '{{theme}}-primary-700'}">
+		<md-card-title-text>
+			<span class="md-title"><h1 align="center">Site Key Management</h1></span>
+		</md-card-title-text>
+		</md-card>		
 		</section>
-	</md-content>	
 	</div>
-	<div ng-app='siteApp' ng-controller='siteController' ng-cloak>
-		<md-content layout-padding>
+	<div ng-app='siteApp' ng-controller='siteController'>
+		<md-card md-colors="::{backgroundColor: '{{theme}}-primary-700'}">
+		<md-card-title>
+		<md-card-title-text>
+	
+			<div>
+				<md-card md-colors="::{backgroundColor: '{{theme}}-primary-700'}">
+				<md-card-title>
+				<md-card-title-text>
+	
+				<label>Site</label>
+				<md-select ng-model="selectedSite" ng-change="update(selectedSite)" placeholder="Please select a site">
+				<md-optgroup label="Site">
+				<md-option ng-repeat="site in sites" value="{{site.id}}">{{site.name}}</md-option>
+				</md-optgroup>
+				</md-select>
+				
+				</md-card-title-text>
+				</md-card-title>
+				</md-card>
+			</div>
+		
 		<div>
-			<md-input-container class="width-100" >
-			<label>Site</label>
-			<md-select ng-model="selectedSite" ng-change="update(selectedSite)" placeholder="Please select a site">
-			<md-optgroup label="Site">
-			<md-option ng-repeat="site in sites" value="{{site.id}}">{{site.name}}</md-option>
-			</md-optgroup>
-			</md-select>
-			</md-input-container>
-		</div>
-		</md-content>
-		<div>
-		<md-content layout-padding>
+			<md-card md-colors="::{backgroundColor: '{{theme}}-primary-700'}">
+			<md-card-title>
+			<md-card-title-text>
+
 			<form name="userForm">
 			<div layout-gt-xs="row">
-				<md-input-container class="md-block" flex-gt-xs>
+				<md-input-container  flex-gt-xs>
 				<label>Id</label>
 				<input ng-model="currentsite.id" disabled>
 				</md-input-container>
@@ -69,24 +79,31 @@
 				</md-input-container>
 			</div>
 		
-			<div layout-gt-sm="row">
-				<md-button ng-click="generate(selectedSite)" class="md-raised md-cornered md-green" ng-disabled="false">Generate</md-button>
-				<md-button ng-click="delete(selectedSite)"   class="md-raised md-cornered md-red" ng-disabled="false">Delete</md-button>
-			</div>  
-			</form>
-		</md-content>  
-		</div>
 
-		<div>
-		<md-content>
-			<section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
-				<md-toolbar class="md-primary">
-					<div class="md-toolbar-tools md-bgcolor-red">
-						<h1 class="md-flex">Copyright</h1>
-					</div>
-				</md-toolbar>
-			</section>
-		</md-content>	
-		</div>	
+			</form>
+	
+		
+		
+			</md-card-title>
+			</md-card-title-text>
+			</md-card>
+
+			<md-card md-colors="::{backgroundColor: '{{theme}}-primary-700'}">
+			<md-card-title>
+			<md-card-title-text>
+				<div layout-gt-sm="row">
+					<md-button ng-click="generate(selectedSite)" class="md-raised md-cornered md-green" ng-disabled="false">Generate</md-button>
+					<md-button ng-click="delete(selectedSite)"   class="md-raised md-cornered md-red" ng-disabled="false">Delete</md-button>
+				</div>  
+			</md-card-title>
+		    </md-card-title-text>
+			</md-card>
+		
+		</div>
+		</md-card-title>
+	    </md-card-title-text>	
+		</md-card>
+		
+	</div>
 	</body>
 </html>

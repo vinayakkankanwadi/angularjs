@@ -1,5 +1,5 @@
 .md-button.md-cornered {
-    border-radius: 30px 30px 30px 30px;
+    border-radius: 3px 3px 3px 3px;
 }
 
 .md-button.md-raised.md-red:not([disabled]) {
