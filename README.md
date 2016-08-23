@@ -1,2 +1,3 @@
 # angularjs
+```
 Playing with angularjs
