@@ -1,4 +1,4 @@
 # angularjs
 ```
-Playing with angularjs
+Angularjs
 ```
